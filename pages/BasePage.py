@@ -10,5 +10,5 @@ class BasePage:
         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(locator),
                                                       message=f"Не удалось найти элемент {locator}")
 
-    def get_url(self):
-        return self.driver.get_url()
+    def get_url(self, url):
+        return self.driver.get(url)
