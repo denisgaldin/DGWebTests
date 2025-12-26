@@ -1,8 +1,8 @@
+import allure
 from core.BaseTest import browser
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPageHelper
 from pages.RecoveryPage import RecoveryPageHelper
-import allure
 
 BASE_URL = "https://ok.ru/"
 LOGIN_TEXT = "email"
