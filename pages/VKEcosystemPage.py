@@ -1,13 +1,13 @@
-import allure
 from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
+import allure
 
 
-class AdvertisementCabinetHelpLocators:
-    TITLE = (By.XPATH, "//span[text()='Рекламный кабинет']")
+class VKEcosystemLocators:
+    TITLE_LABEL = (By.XPATH, '//h1[@class="title-h2"]')
 
 
-class AdvertisementCabinetHelpHelper(BasePageHelper):
+class VKEcosystemPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
@@ -15,4 +15,4 @@ class AdvertisementCabinetHelpHelper(BasePageHelper):
     def check_page(self):
         with allure.step("Проверяем корректность загрузки страницы"):
             self.attach_screenshot()
-        self.find_element(AdvertisementCabinetHelpLocators.TITLE)
+        self.find_element(VKEcosystemLocators.TITLE_LABEL).click()

@@ -1,11 +1,11 @@
 from selenium.webdriver import ActionChains
 
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 import allure
 
 
-class HelpPageLocators(BasePage):
+class HelpPageHelperLocators(BasePageHelper):
     SEARCH_FIELD = (By.XPATH, "//input[@type='search']")
     ACTUAL_TODAY = (By.XPATH, "//a[contains(@href,'segodnya-aktualno')]")
     REGISTRATION = (By.XPATH, "//a[contains(@href,'registraciya')]")
@@ -22,7 +22,7 @@ class HelpPageLocators(BasePage):
     ADVERTISEMENT_CABINET = (By.XPATH, "//a[contains(@href,'reklamnyi-kabinet')]")
 
 
-class HelpPageHelper(BasePage):
+class HelpPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
@@ -30,20 +30,20 @@ class HelpPageHelper(BasePage):
     def check_page(self):
         with allure.step("Проверяем корректность загрузки страницы"):
             self.attach_screenshot()
-        self.find_element(HelpPageLocators.SEARCH_FIELD)
-        self.find_element(HelpPageLocators.ACTUAL_TODAY)
-        self.find_element(HelpPageLocators.REGISTRATION)
-        self.find_element(HelpPageLocators.MY_PROFILE)
-        self.find_element(HelpPageLocators.COMMUNICATION)
-        self.find_element(HelpPageLocators.PROFILE_ACCESS)
-        self.find_element(HelpPageLocators.SECURITY)
-        self.find_element(HelpPageLocators.GROUP)
-        self.find_element(HelpPageLocators.PAYED_FUNCTION)
-        self.find_element(HelpPageLocators.SPAM)
-        self.find_element(HelpPageLocators.GAMES_AND_APPS)
-        self.find_element(HelpPageLocators.OTHER_SERVICES)
-        self.find_element(HelpPageLocators.IMPORTANT_INFORMATION)
-        self.find_element(HelpPageLocators.ADVERTISEMENT_CABINET)
+        self.find_element(HelpPageHelperLocators.SEARCH_FIELD)
+        self.find_element(HelpPageHelperLocators.ACTUAL_TODAY)
+        self.find_element(HelpPageHelperLocators.REGISTRATION)
+        self.find_element(HelpPageHelperLocators.MY_PROFILE)
+        self.find_element(HelpPageHelperLocators.COMMUNICATION)
+        self.find_element(HelpPageHelperLocators.PROFILE_ACCESS)
+        self.find_element(HelpPageHelperLocators.SECURITY)
+        self.find_element(HelpPageHelperLocators.GROUP)
+        self.find_element(HelpPageHelperLocators.PAYED_FUNCTION)
+        self.find_element(HelpPageHelperLocators.SPAM)
+        self.find_element(HelpPageHelperLocators.GAMES_AND_APPS)
+        self.find_element(HelpPageHelperLocators.OTHER_SERVICES)
+        self.find_element(HelpPageHelperLocators.IMPORTANT_INFORMATION)
+        self.find_element(HelpPageHelperLocators.ADVERTISEMENT_CABINET)
 
     def scrollToitem(self, locator):
         scroll_item = self.find_element(locator)
