@@ -1,5 +1,3 @@
-from tkinter.constants import CURRENT
-
 import allure
 from core.BaseTest import browser
 from pages.BasePage import BasePageHelper
